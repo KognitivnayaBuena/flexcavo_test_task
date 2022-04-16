@@ -1,4 +1,6 @@
-const TELEMATIC_DATA = {
+import { TelematicData } from "../core";
+
+const TELEMATIC_DATA: TelematicData = {
   EquipmentHeader: {
     OEMName: "CAT",
     Model: "M315F",

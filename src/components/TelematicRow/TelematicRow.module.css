@@ -7,6 +7,10 @@
   border-bottom: 1px solid var(--main-text-color);
 }
 
+.isWarning {
+  background-color: var(--warning-color);
+}
+
 .isOutOfResurse {
   background-color: var(--error-color);
 }

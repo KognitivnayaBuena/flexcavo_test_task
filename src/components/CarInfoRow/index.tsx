@@ -1,14 +1,10 @@
 import React, { FC } from "react";
 import { formatDate } from "../../service/DateService";
+import { EquipmentHeader } from "../../core";
 import styles from "./CarInfoRow.module.css";
 
-type CarInfoRowProps = {};
-
-const EquipmentHeader = {
-  OEMName: "CAT",
-  Model: "M315F",
-  SerialNumber: "ABC123456",
-  SnapshotTime: "2021-06-26T10:00:00Z",
+type CarInfoRowProps = {
+  equipmentHeader: EquipmentHeader;
 };
 
 type ContentProps = {
@@ -25,18 +21,18 @@ const Content: FC<ContentProps> = ({ title, content }) => {
   );
 };
 
-const CarInfoRow: FC<CarInfoRowProps> = () => {
+const CarInfoRow: FC<CarInfoRowProps> = ({ equipmentHeader }) => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <Content title={"OEM Name: "} content={EquipmentHeader.OEMName} />
-        <Content title={"Model: "} content={EquipmentHeader.Model} />
+        <Content title={"OEM Name: "} content={equipmentHeader.OEMName} />
+        <Content title={"Model: "} content={equipmentHeader.Model} />
         <Content
           title={"Serial number: "}
-          content={EquipmentHeader.SerialNumber}
+          content={equipmentHeader.SerialNumber}
         />
       </div>
-      <p>{formatDate(new Date(EquipmentHeader.SnapshotTime))}</p>
+      <p>{formatDate(new Date(equipmentHeader.SnapshotTime))}</p>
     </div>
   );
 };

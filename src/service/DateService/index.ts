@@ -10,16 +10,20 @@ const WEEKDAY = [
   "Saturday",
 ];
 
+const getDayOfWeek = (date: Date) => {
+  const dayOfWeek = WEEKDAY[date.getDay()];
+
+  return dayOfWeek;
+};
+
 const formatDate = (date: Date) => {
-  const currentDate = new Date(date);
+  const dayOfWeek = getDayOfWeek(date);
 
-  const dayOfWeek = WEEKDAY[currentDate.getDay()];
-
-  const year = currentDate.getFullYear();
-  const month = padDigit(currentDate.getMonth() + 1);
-  const day = padDigit(currentDate.getDate());
+  const year = date.getFullYear();
+  const month = padDigit(date.getMonth() + 1);
+  const day = padDigit(date.getDate());
 
   return `${day}/${month}/${year} ${dayOfWeek}`;
 };
 
-export { formatDate };
+export { formatDate, getDayOfWeek };
