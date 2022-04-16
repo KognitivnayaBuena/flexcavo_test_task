@@ -1,0 +1,16 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 150px 150px 150px 1fr;
+  grid-column-gap: 10px;
+  padding: 10px;
+  background-color: var(--success-color);
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.isOutOfResurse {
+  background-color: var(--error-color);
+}
+
+.text {
+  border-right: 1px solid var(--main-text-color);
+}
